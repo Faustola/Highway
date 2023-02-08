@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.branco {
+    color: #fff;
+}
+
+body {
+    color: #fff;
+    background-color: black;
+    font-family: Noto Sans;
+}
+
+header {
+    border-bottom: 1px solid #fff;
+    margin: 0 30px;
+    height: 90px;
+}
+
+h1 {
+    font-size: 25px;
+
+    position: absolute;
+    top: 17px;
+    left: 40px;
+}
+
+header #img-logo {
+    width: 30px;
+    height: 30px;
+
+    position: absolute;
+    top: 20px;
+    left: 10px;
+}
+
+
+header #img-tema {
+    width: 30px;
+    height: 30px;
+
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+main {
+    margin-top: 40px;
+}
+
+.lista-playlist {
+    margin-top: 30px;
+}
+
+div.nome-da-playlist {
+    display: none;
+    position: absolute;
+    top: 0;
+    z-index: 3;
+    background-color: rgba(94, 92, 92,.7);
+    width: 100%;
+    height: 100%;
+}
+
+div.nome-da-playlist p {
+    text-align: center;
+    margin-top: 200px;
+}
+
+div.nome-da-playlist input {
+    border: none;
+    width: 250px;
+    height: 20px;
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 8px;
+    padding: 15px;
+    outline: none;
+
+    font-family: Noto Sans;
+    font-size: 16px;
+}
+
+div.nome-da-playlist button {
+    border: none;
+    width: 70px;
+    height: 35px;
+    color: #fff;
+    font-weight: bolder;
+    border-radius: 8px;
+    background-color: rgb(0, 114, 9);
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+}
+
+div.nome-da-playlist button:active {
+    transform: scale(.9);
+}
+
+.aqui-playlists {
+    margin-top: 15px;
+    z-index: 2;
+    height: 100%;
+}
+
+.aqui-playlists ul {
+    position: relative;
+}
+
+.aqui-playlists h3 {
+    font-weight: bolder;
+    font-size: 20px;
+    background-color: rgb(85, 85, 85);
+    padding: 10px;
+    cursor: pointer;
+}
+
+.aqui-playlists button {
+    position: absolute;
+    background-color: #fff;
+    border: none;
+    top: 15px;
+    right: 20px;
+    font-weight: bolder;
+    border-radius: 8px;
+    width: 40px;
+    height: 20px;
+    cursor: pointer;
+}
+
+
+
+main #btn-cria{
+    border: none;
+    background-color: #fff;
+    color: black;
+    padding: 10px;
+    border-radius: 8px;
+    margin-left: 20px;
+    cursor: pointer;
+    
+    font-weight: bold;
+    font-size: 14px;
+}
+
+span {
+    display: none;
+    margin-left: 20px;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+section {
+    margin-top: 40px;
+}
+
+ul {
+    background-color: rgb(26, 26, 26);
+    list-style-type: none;
+    margin: 0 10px;
+}
+
+div {
+    transition: height .2s ease-in-out;
+    overflow: hidden;
+    height: 0px;
+}
+
+section h2 {
+    font-weight: bolder;
+    font-size: 20px;
+    background-color: rgb(15, 15, 15);
+    margin: 0 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+section .seta{
+    width: 25px;
+    height: 25px;
+    float: right;
+
+    margin-top: 3px;
+    margin-right: 15px;
+    transition: .3s;
+}
+
+li {
+    position: relative;
+    height: 60px;
+    background-color: rgb(36, 36, 36);
+    border-bottom: 1px solid rgb(170, 169, 169);
+}
+
+li p {
+    margin-left: 5px;
+    padding-top: 20px;
+    font-weight: bold;
+}
+
+p.nome-musica {
+    font-size: 12px;
+}
+
+p.banda {
+    color: rgb(173, 173, 173);
+    font-style: italic;
+    font-size: 9px;
+    position: absolute;
+    top: -20px;
+    left: 60px;
+}
+
+li p, .play, .pause,  .icone-musica {
+    display: inline-block;
+}
+
+.play {
+    cursor: pointer;
+    margin-right: 10px;
+    margin-top: 20px;
+    float: right;
+    width: 25px;
+    height: 25px;
+}
+
+.pause {
+    cursor: pointer;
+    margin-right: 5px;
+    margin-top: 20px;
+    float: right;
+    width: 25px;
+    height: 25px;
+}
+
+progress {
+    width: 30vh;
+    height: 4px;
+    position: absolute;
+    bottom: 2px;
+    left: 70px;
+    display: block;
+    -webkit-appearance: none;
+}
+
+progress::-webkit-progress-bar {
+    border-radius: 50px;
+}
+
+progress::-webkit-progress-value {
+    background: rgb(202, 3, 3);
+    border-radius: 50px;
+}
+
+.icone-musica {
+    float: left;
+    height: 60px;
+    width: 60px;
+}
+
+.play:active, .pause:active {
+    transform: scale(.8);
+}
+
+footer {
+    margin-top: 30px;
+}

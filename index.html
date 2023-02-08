@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highway - Reprodutor de áudio</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+
+        <img src="imagens/rodovia-logo.png" alt="Logo da Highway, uma estrada com curva" id="img-logo">
+        <h1>Highway</h1>
+
+    </header>
+
+    <main>
+
+        <button id="btn-cria" onclick="criaPlaylist()">Criar playlist</button>
+
+        <span class="clique-duas-vezes">Clique duas vezes na música para adicionar aqui e não se esqueça de clicar em "salvar"</span>
+
+        <div class="nome-da-playlist">
+            <p>Escreva o nome da sua playlist</p>
+
+            <input type="text" maxlength="25" class="input-playlist">
+
+            <button onclick="daNomePlaylist()">Ok</button>
+        </div>
+
+        <div class="aqui-playlists">
+
+        </div>
+
+        <section id="pop-internacional">
+
+            <h2 id="titulo-pop-internacional">Pop Internacional <img src="imagens/seta.png" alt="Seta apontando para baixo" class="seta seta-pop-int"></h2>
+
+            <div id="div-pop-int">
+
+                <ul class="ul-pop-int">
+
+                    <li class="li-darkside" ondblclick="playlistDarkside()"><img src="imagens/darkside.png" alt="" class="icone-musica"><p class="nome-darkside nome-musica">Darkside<p class="banda">Alan Walker</p></p><progress id="barra-darkside" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-darkside"><img src="imagens/play.png" alt="Botão triangular" class="play play-darkside"></li>
+
+                    <li class="li-ignite" ondblclick="playlistIgnite()"><img src="imagens/ignite.jpg" alt="" class="icone-musica"><p class="nome-ignite nome-musica">Ignite<p class="banda">Alan Walker</p></p><progress id="barra-ignite" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-ignite"><img src="imagens/play.png" alt="Botão triangular" class="play play-ignite"></li>
+
+                    <li class="li-just-the-way" ondblclick="playlistJustTheWay()"><img src="imagens/just the way you are.jpg" alt="" class="icone-musica"><p class="nome-just-the-way-you-are nome-musica">Just the Way You Are<p class="banda">Bruno Mars</p></p><progress id="barra-just-the-way-you-are" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-just-the-way-you-are"><img src="imagens/play.png" alt="Botão triangular" class="play play-just-the-way-you-are"></li>
+
+                    <li class="li-viva-la-vida" ondblclick="playlistVivaLaVida()"><img src="imagens/viva la vida.jpeg" alt="" class="icone-musica"><p class="nome-viva-la-vida nome-musica">Viva La Vida<p class="banda">Coldplay</p></p><progress id="barra-viva-la-vida" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-viva-la-vida"><img src="imagens/play.png" alt="Botão triangular" class="play play-viva-la-vida"></li>
+
+                    <li class="li-dont-start-now" ondblclick="playlistDontStartNow()"><img src="imagens/dont start now.jpg" alt="" class="icone-musica"><p class="nome-dont-start-now nome-musica">Don't Start Now<p class="banda">Dua Lipa</p></p><progress id="barra-dont-start-now" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-dont-start-now"><img src="imagens/play.png" alt="Botão triangular" class="play play-dont-start-now"></li>
+
+                    <li class="li-shape-of-you" ondblclick="playlistShapeOfYou()"><img src="imagens/shape of you.jpeg" alt="" class="icone-musica"><p class="nome-shape-of-you nome-musica">Shape of You<p class="banda">Ed Sheeran</p></p><progress id="barra-shape-of-you" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-shape-of-you"><img src="imagens/play.png" alt="Botão triangular" class="play play-shape-of-you"></li>
+
+                    <li class="li-i-dont-care" ondblclick="playlistIDontCare()"><img src="imagens/i dont care.jpg" alt="" class="icone-musica"><p class="nome-i-dont-care nome-musica">I Don't Care<p class="banda">Ed Sheeran</p></p><progress id="barra-i-dont-care" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-i-dont-care"><img src="imagens/play.png" alt="Botão triangular" class="play play-i-dont-care"></li>
+    
+                    <li class="li-enemy" ondblclick="playlistEnemy()"><img src="imagens/enemy.jpg" alt="" class="icone-musica"><p class="nome-enemy nome-musica">Enemy<p class="banda">Imagine Dragons</p></p><progress id="barra-enemy" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-enemy"><img src="imagens/play.png" alt="Botão triangular" class="play play-enemy"></li>
+    
+                    <li class="li-radioactive" ondblclick="playlistRadioactive()"><img src="imagens/radioactive.jpeg" alt="" class="icone-musica"><p class="nome-radioactive nome-musica">Radioactive<p class="banda">Imagine Dragons</p></p><progress id="barra-radioactive" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-radioactive"><img src="imagens/play.png" alt="Botão triangular" class="play play-radioactive"></li>
+    
+                    <li class="li-love-me-again" ondblclick="playlistLoveMeAgain()"><img src="imagens/love me again.jpg" alt="" class="icone-musica"><p class="nome-love-me-again nome-musica">Love Me Again<p class="banda">John Newman</p></p><progress id="barra-love-me-again" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-love-me-again"><img src="imagens/play.png" alt="Botão triangular" class="play play-love-me-again"></li>
+
+                    <li class="li-counting-stars" ondblclick="playlistCountingStars()"><img src="imagens/counting stars.jpeg" alt="" class="icone-musica"><p class="nome-counting-stars nome-musica">Counting Stars<p class="banda">One Republic</p></p><progress id="barra-counting-stars" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-counting-stars"><img src="imagens/play.png" alt="Botão triangular" class="play play-counting-stars"></li>
+    
+                    <li class="li-locked-away" ondblclick="playlistLockedAway()"><img src="imagens/locked away.jpeg" alt="" class="icone-musica"><p class="nome-locked-away nome-musica">Locked Away<p class="banda">R.City</p></p><progress id="barra-locked-away" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-locked-away"><img src="imagens/play.png" alt="Botão triangular" class="play play-locked-away"></li>
+                    
+                    <li class="li-me-and-my" ondblclick="playlistMeAndMy()"><img src="imagens/rixton.jpg" alt="" class="icone-musica"><p class="nome-me-and-my-broken-heart nome-musica">Me and My Broken Heart<p class="banda">Rixton</p></p><progress id="barra-me-and-my-broken-heart" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-me-and-my-broken-heart"><img src="imagens/play.png" alt="Botão triangular" class="play play-me-and-my-broken-heart"></li>
+
+                    <li class="li-i-knew-you" ondblclick="playlistIKnewYou()"><img src="imagens/i knew you were a trouble.jpeg" alt="" class="icone-musica"><p class="nome-i-knew-you-were-a-trouble nome-musica">I Knew You Were a Trouble<p class="banda">Taylor Swift</p></p><progress id="barra-i-knew-you-were-a-trouble" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-i-knew-you-were-a-trouble"><img src="imagens/play.png" alt="Botão triangular" class="play play-i-knew-you-were-a-trouble"></li>
+
+                    <li class="li-dance-monkey" ondblclick="playlistDanceMonkey()"><img src="imagens/dance monkey.jpeg" alt="" class="icone-musica"><p class="nome-dance-monkey nome-musica">Dance Monkey<p class="banda">Tones and I</p></p><progress id="barra-dance-monkey" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-dance-monkey"><img src="imagens/play.png" alt="Botão triangular" class="play play-dance-monkey"></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="soft-rock">
+
+            <h2 id="titulo-soft-rock">Soft Rock <img src="imagens/seta.png" alt="Seta apontando para baixo" class="seta seta-soft-rock"></h2>
+
+            <div id="div-soft-rock">
+
+                <ul class="ul-soft-rock">
+
+                    <li class="li-dream-on" ondblclick="playlistDreamOn()"><img src="imagens/dream on.jpeg" alt="" class="icone-musica"><p class="nome-dream-on nome-musica">Dream On<p class="banda">Aerosmith</p></p><progress id="barra-dream-on" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-dream-on"><img src="imagens/play.png" alt="Botão triangular" class="play play-dream-on"></li>
+
+                    <li class="li-always" ondblclick="playlistAlways()"><img src="imagens/always.jpeg" alt="" class="icone-musica"><p class="nome-always nome-musica">Always<p class="banda">Bon Jovi</p></p><progress id="barra-always" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-always"><img src="imagens/play.png" alt="Botão triangular" class="play play-always"></li>
+
+                    <li class="li-crying" ondblclick="playlistCrying()"><img src="imagens/crying.jpg" alt="" class="icone-musica"><p class="nome-crying nome-musica">Crying<p class="banda">Aerosmith</p></p><progress id="barra-crying" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-crying"><img src="imagens/play.png" alt="Botão triangular" class="play play-crying"></li>
+
+                    <li class="li-hotel-california" ondblclick="playlistHotelCalifornia()"><img src="imagens/hotel california.jpg" alt="" class="icone-musica"><p class="nome-hotel-california nome-musica">Hotel California<p class="banda">Hotel California</p></p><progress id="barra-hotel-california" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-hotel-california"><img src="imagens/play.png" alt="Botão triangular" class="play play-hotel-california"></li>
+
+                    <li class="li-more-than-words" ondblclick="playlistMoreThanWords()"><img src="imagens/more than words.jpeg" alt="" class="icone-musica"><p class="nome-more-than-words nome-musica">More Than Words<p class="banda">Extreme</p></p><progress id="barra-more-than-words" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-more-than-words"><img src="imagens/play.png" alt="Botão triangular" class="play play-more-than-words"></li>
+
+                    <li class="li-sweet-child" ondblclick="playlistSweetChild()"><img src="imagens/sweet child.jpeg" alt="" class="icone-musica"><p class="nome-sweet-child nome-musica">Sweet Child O'Mine<p class="banda">Guns N' Roses</p></p><progress id="barra-sweet-child" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-sweet-child"><img src="imagens/play.png" alt="Botão triangular" class="play play-sweet-child"></li>
+
+                    <li class="li-rock-n-roll" ondblclick="playlistRockNRoll()"><img src="imagens/rock n roll all nighrt.png" alt="" class="icone-musica"><p class="nome-rock-n-roll nome-musica">Rock And Roll All Night<p class="banda">Kiss</p></p><progress id="barra-rock-n-roll" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-rock-n-roll"><img src="imagens/play.png" alt="Botão triangular" class="play play-rock-n-roll"></li>
+
+                    <li class="li-livin-on-a" ondblclick="playlistLivinOnA()"><img src="imagens/livin on a prayer.png" alt="" class="icone-musica"><p class="nome-livin-on-a-prayer nome-musica">Livin On a Prayer<p class="banda">Bon Jovi</p></p><progress id="barra-livin-on-a-prayer" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-livin-on-a-prayer"><img src="imagens/play.png" alt="Botão triangular" class="play play-livin-on-a-prayer"></li>
+
+                    <li class="li-november-rain" ondblclick="playlistNovemberRain()"><img src="imagens/november rain.jpg" alt="" class="icone-musica"><p class="nome-november-rain nome-musica">November Rain<p class="banda">Guns N' Roses</p></p><progress id="barra-november-rain" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-november-rain"><img src="imagens/play.png" alt="Botão triangular" class="play play-november-rain"></li>
+
+                    <li class="li-have-you-ever" ondblclick="playlistHaveYouEver()"><img src="imagens/have you ever seen the rain.jpeg" alt="" class="icone-musica"><p class="nome-have-you-ever nome-musica">Have You Ever Seen The Rain<p class="banda">Rod Stewart</p></p><progress id="barra-have-you-ever" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-have-you-ever"><img src="imagens/play.png" alt="Botão triangular" class="play play-have-you-ever"></li>
+
+                    <li class="li-wind-of-change" ondblclick="playlistWindOfChange()"><img src="imagens/wind of change.jpeg" alt="" class="icone-musica"><p class="nome-wind-of-change nome-musica">Wind Of Change<p class="banda">Scorpions</p></p><progress id="barra-wind-of-change" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-wind-of-change"><img src="imagens/play.png" alt="Botão triangular" class="play play-wind-of-change"></li>
+
+                    <li class="li-every-breath" ondblclick="playlistEveryBreath()"><img src="imagens/every breath you take.jpeg" alt="" class="icone-musica"><p class="nome-every-breath nome-musica">Every Breath You Take<p class="banda">The Police</p></p><progress id="barra-every-breath" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-every-breath"><img src="imagens/play.png" alt="Botão triangular" class="play play-every-breath"></li>
+
+                </ul>
+            </div>
+        </section>
+
+        <section id="pes">
+
+            <h2 id="titulo-pes">Pro Evolution Soccer<img src="imagens/seta.png" alt="Seta apontando para baixo" class="seta seta-pes"></h2>
+
+            <div id="div-pes">
+
+                <ul class="ul-pes">
+
+                    <li class="li-wake-me-up" ondblclick="playlistWakeMeUp()"><img src="imagens/wake me up.jpeg" alt="" class="icone-musica"><p class="nome-wake-me-up nome-musica">Wake Me Up<p class="banda">Avicii</p></p><progress id="barra-wake-me-up" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-wake-me-up"><img src="imagens/play.png" alt="Botão triangular" class="play play-wake-me-up"></li>
+    
+                    <li class="li-pompeii" ondblclick="playlistPompeii()"><img src="imagens/pompeii.jpg" alt="" class="icone-musica"><p class="nome-pompeii nome-musica">Pompeii<p class="banda">Bastille</p></p><progress id="barra-pompeii" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-pompeii"><img src="imagens/play.png" alt="Botão triangular" class="play play-pompeii"></li>
+    
+                    <li class="li-i-need-your-love" ondblclick="playlistINeedYourLove()"><img src="imagens/i need your love.jpeg" alt="" class="icone-musica"><p class="nome-i-need-your-love nome-musica">I Need Your Love<p class="banda">Calvin Harris</p></p><progress id="barra-i-need-your-love" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-i-need-your-love"><img src="imagens/play.png" alt="Botão triangular" class="play play-i-need-your-love"></li>
+    
+                    <li class="li-rather-be" ondblclick="playlistRatherBe()"><img src="imagens/rather be.jpg" alt="" class="icone-musica"><p class="nome-rather-be nome-musica">Rather Be<p class="banda">Clean Bandit</p></p><progress id="barra-rather-be" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-rather-be"><img src="imagens/play.png" alt="Botão triangular" class="play play-rather-be"></li>
+    
+                    <li class="li-symphony" ondblclick="playlistSymphony()"><img src="imagens/simphony.jpeg" alt="" class="icone-musica"><p class="nome-simphony nome-musica">Simphony<p class="banda">Clean Bandit</p></p><progress id="barra-symphony" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-symphony"><img src="imagens/play.png" alt="Botão triangular" class="play play-symphony"></li>
+    
+                    <li class="li-miracle-mile" ondblclick="playlistMiracleMile()"><img src="imagens/miracle miles.jpeg" alt="" class="icone-musica"><p class="nome-miracle-mile nome-musica">Miracle Mile<p class="banda">Coldwar Kids</p></p><progress id="barra-miracle-mile" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-miracle-mile"><img src="imagens/play.png" alt="Botão triangular" class="play play-miracle-mile"></li>
+    
+                    <li class="li-something-just" ondblclick="playlistSomethingJust()"><img src="imagens/something just like this.jpeg" alt="" class="icone-musica"><p class="nome-something-just nome-musica">Something Just Like This<p class="banda">The Chainsmokers</p></p><progress id="barra-something-just" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-something-just"><img src="imagens/play.png" alt="Botão triangular" class="play play-something-just"></li>
+    
+                    <li class="li-rock-you" ondblclick="playlistRockYou()"><img src="imagens/we will rock you.jpeg" alt="" class="icone-musica"><p class="nome-rock-you nome-musica">We Will Rock You<p class="banda">Queen</p></p><progress id="barra-rock-you" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-rock-you"><img src="imagens/play.png" alt="Botão triangular" class="play play-rock-you"></li>
+    
+
+                </ul>
+            </div>
+        </section>
+
+
+        <section id="backstreet">
+
+            <h2 id="titulo-backstreet">Backstreet Boys<img src="imagens/seta.png" alt="Seta apontando para baixo" class="seta seta-backstreet"></h2>
+
+            <div id="div-backstreet">
+
+                <ul class="ul-backstreet-boys">
+
+                    <li class="li-all-i-have" ondblclick="playlistAllIHave()"><img src="imagens/as long as you love me.jpeg" alt="" class="icone-musica"><p class="nome-all-i-have nome-musica">All I Have To Give<p class="banda">Backstreet Boys</p></p><progress id="barra-all-i-have" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-all-i-have"><img src="imagens/play.png" alt="Botão triangular" class="play play-all-i-have"></li>
+
+                    <li class="li-as-long-as" ondblclick="playlistAsLongAs()"><img src="imagens/as long as you love me.jpeg" alt="" class="icone-musica"><p class="nome-as-long-as nome-musica">As Long As You Love Me<p class="banda">Backstreet Boys</p></p><progress id="barra-as-long-as" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-as-long-as"><img src="imagens/play.png" alt="Botão triangular" class="play play-as-long-as"></li>
+
+                    <li class="li-i-want-it" ondblclick="playlistIWantIt()"><img src="imagens/i want it that way.jpeg" alt="" class="icone-musica"><p class="nome-i-want-it nome-musica">I Want It That Way<p class="banda">Backstreet Boys</p></p><progress id="barra-i-want-it" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-i-want-it"><img src="imagens/play.png" alt="Botão triangular" class="play play-i-want-it"></li>
+
+                    <li class="li-incomplete" ondblclick="playlistIncomplete()"><img src="imagens/incomplete.jpeg" alt="" class="icone-musica"><p class="nome-incomplete nome-musica">Incomplete<p class="banda">Backstreet Boys</p></p><progress id="barra-incomplete" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-incomplete"><img src="imagens/play.png" alt="Botão triangular" class="play play-incomplete"></li>
+
+                    <li class="li-straight-through" ondblclick="playlistStraightThrough()"><img src="imagens/straight trough my heart.jpeg" alt="" class="icone-musica"><p class="nome-straight-through nome-musica">Straight Through My Heart<p class="banda">Backstreet Boys</p></p><progress id="barra-straight-trough" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-straight-through"><img src="imagens/play.png" alt="Botão triangular" class="play play-straight-through"></li>
+
+                    <li class="li-bigger" ondblclick="playlistBigger()"><img src="imagens/bigger.jpg" alt="" class="icone-musica"><p class="nome-bigger nome-musica">Bigger<p class="banda">Backstreet Boys</p></p><progress id="barra-bigger" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-bigger"><img src="imagens/play.png" alt="Botão triangular" class="play play-bigger"></li>
+
+                    <li class="li-drowning" ondblclick="playlistDrowning()"><img src="imagens/drowning.jpg" alt="" class="icone-musica"><p class="nome-drowning nome-musica">Drowning<p class="banda">Bacstreet Boys</p></p><progress id="barra-drowning" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-drowning"><img src="imagens/play.png" alt="Botão triangular" class="play play-drowning"></li>
+
+                    <li class="li-get-down" ondblclick="playlistGetDown()"><img src="imagens/get down.jpg" alt="" class="icone-musica"><p class="nome-get-down nome-musica">Get Down<p class="banda">Backstreet Boys</p></p><progress id="barra-get-down" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-get-down"><img src="imagens/play.png" alt="Botão triangular" class="play play-get-down"></li>
+
+                    <li class="li-just-want-you" ondblclick="playlistJustWantYou()"><img src="imagens/just want you know.jpeg" alt="" class="icone-musica"><p class="nome-just-want-you nome-musica">Just Want You Know<p class="banda">Backstreet Boys</p></p><progress id="barra-just-want-you" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-just-want-you"><img src="imagens/play.png" alt="Botão triangular" class="play play-just-want-you"></li>
+
+                    <li class="li-quit-playing" ondblclick="playlistQuitPlaying()"><img src="imagens/quit playing games.jpg" alt="" class="icone-musica"><p class="nome-quit-playing nome-musica">Quit Playing Games<p class="banda">Backstreet Boys</p></p><progress id="barra-quit-playing" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-quit-playing"><img src="imagens/play.png" alt="Botão triangular" class="play play-quit-playing"></li>
+
+                    <li class="li-shape-of-my-heart" ondblclick="playlistShapeOfMyHeart()"><img src="imagens/shape of my heart.jpg" alt="" class="icone-musica"><p class="nome-shape-of-my-heart nome-musica">Shape Of My Heart<p class="banda">Backstreet Boys</p></p><progress id="barra-shape-of-my-heart" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-shape-of-my-heart"><img src="imagens/play.png" alt="Botão triangular" class="play play-shape-of-my-heart"></li>
+
+                    <li class="li-the-one" ondblclick="playlistTheOne()"><img src="imagens/the one.jpeg" alt="" class="icone-musica"><p class="nome-the-one nome-musica">The One<p class="banda">Backstreet Boys</p></p><progress id="barra-the-one" max="0" value="0"></progress><img src="imagens/pause.png" alt="" class="pause pause-the-one"><img src="imagens/play.png" alt="Botão triangular" class="play play-the-one"></li>
+
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer></footer>
+    
+    <script src="scripts.js"></script>
+    <script src="play.js"></script>
+    <script src="playlist.js"></script>
+</body>
+</html>
